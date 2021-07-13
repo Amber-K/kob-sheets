@@ -13,6 +13,4 @@ test:
 
 production:
   <<: *default
-  database: kob_sheets_production
-  username: kob_sheets
-  password: <%= ENV['KOB_SHEETS_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
