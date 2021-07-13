@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  url: <%= ENV['DATABASE_URL_DEV'] %>
+
+test:
+  <<: *default
+  url: <%= ENV['DATABASE_URL_TEST'] %>
+
+production:
+  <<: *default
+  database: kob_sheets_production
+  username: kob_sheets
+  password: <%= ENV['KOB_SHEETS_DATABASE_PASSWORD'] %>
