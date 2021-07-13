@@ -1,0 +1,52 @@
+// Place all the styles related to the static_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.title-bar {
+  position: relative;
+  bottom: 3rem;
+  text-align: center;
+  color: white;
+}
+
+.title-bar > img {
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  filter: blur(4px);
+  z-index: 0;
+}
+
+.centered-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.centered-title h1, .centered-title h2, .centered-title img, .apply-button {
+  filter: drop-shadow(0 0 5px black);
+}
+
+.confirm-button {
+  margin-top: 1rem;
+  padding: 10px 10% 10px 10%;
+  font-weight: bold;
+  border: solid black 2px;
+  border-radius: 5px;
+  color: black;
+  background-color: white;
+}
+
+.confirm-button:hover {
+  cursor: pointer;
+  color: white;
+  background-color: black;
+}
+
+.body-content {
+  text-align: left;
+  max-width: 1140px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
