@@ -1,0 +1,8 @@
+%h1 Characters
+
+= link_to "Create New Character", new_character_path, class: "btn btn-primary"
+
+- @characters.each do |character|
+  - if current_user.id == character.user_id
+    .character-preview
+      = link_to character.name, character, class: "btn btn-secondary"

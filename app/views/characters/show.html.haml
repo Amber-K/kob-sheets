@@ -1,0 +1,8 @@
+%h1 Character Information
+%h2
+  Name:
+  = @character.name
+
+.btn-group
+  = link_to "Edit Character", edit_character_path(@character), class: "btn btn-primary"
+  = link_to "Delete Character", @character, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger"
