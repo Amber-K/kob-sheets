@@ -15,3 +15,40 @@
  */
 
 @import "bootstrap";
+
+.home-link {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.nav-bar {
+  padding: 20px;
+  background-color: #6d0033;
+}
+
+.right-side {
+  float: right;
+}
+
+.username-display {
+  font-size: 1.1em;
+  padding-right: 5px;
+  display: inline;
+}
+
+.home-link, .username-display {
+  color: white;
+  text-decoration: none;
+}
+
+.home-link:hover, .username-display:hover {
+  color: white;
+}
+
+.page-content {
+  padding: 20px 40px 20px 40px;
+}
+
+.submit-button {
+  margin-top: 10px;
+}

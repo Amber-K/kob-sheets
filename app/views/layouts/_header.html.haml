@@ -1,0 +1,12 @@
+%header
+  %nav
+    .nav-bar
+      = link_to "KoB Sheets", root_path, class: "home-link"
+      .right-side
+        - if current_user
+          = link_to "Signed in as " + current_user.username, user_path(current_user), class: "username-display"
+          = link_to "Sign Out", session_path, method: :delete, class: "btn btn-secondary"
+        - else
+          .btn-group
+            = link_to "Sign In", new_session_path, class: "btn btn-primary"
+            = link_to "Sign Up", signup_path, class: "btn btn-secondary"

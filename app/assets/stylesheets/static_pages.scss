@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+body.static_pages main.page-content {
+  padding: 0;
+}
+
 .title-bar {
   position: relative;
   bottom: 3rem;
@@ -11,6 +15,8 @@
 
 .title-bar > img {
   width: 100%;
+  position: relative;
+  top: 21px;
   background-position: center;
   background-size: cover;
   filter: blur(4px);
@@ -24,24 +30,25 @@
   transform: translate(-50%, -50%);
 }
 
-.centered-title h1, .centered-title h2, .centered-title img, .apply-button {
+.centered-title h1, .centered-title h2, .centered-title h3, .centered-title img, .apply-button {
   filter: drop-shadow(0 0 5px black);
 }
 
 .confirm-button {
-  margin-top: 1rem;
+  position: relative;
+  top: 20px;
   padding: 10px 10% 10px 10%;
+  text-decoration: none;
   font-weight: bold;
-  border: solid black 2px;
+  border: solid #6d0033 2px;
   border-radius: 5px;
-  color: black;
+  color: #6d0033;
   background-color: white;
 }
 
 .confirm-button:hover {
-  cursor: pointer;
   color: white;
-  background-color: black;
+  background-color: #6d0033;
 }
 
 .body-content {
