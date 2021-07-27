@@ -1,0 +1,8 @@
+%h1 Account Information
+%h2
+  Username:
+  = @user.username
+
+.btn-group
+  = link_to "Edit Account", edit_user_path(@user), class: "btn btn-primary"
+  = link_to "Delete Account", @user, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger"
