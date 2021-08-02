@@ -2,7 +2,38 @@
 
 = link_to "Create New Character", new_character_path, class: "btn btn-primary"
 
+-# - i = 0
 - @characters.each do |character|
   - if current_user.id == character.user_id
-    .character-preview
-      = link_to character.name, character, class: "btn btn-secondary"
+    -# - if i % 2 == 0
+      .w-100
+    -# .col-6
+    = link_to character do
+      .character-preview
+        = image_tag "profile.jpg", class: "profile-img"
+        .preview-text
+          %h5
+            = character.name
+            - if character.allegiance != ""
+              of
+            = character.allegiance
+          %ul
+            %li
+              Level:
+              = character.level
+            %li
+              Sex:
+              = character.sex
+            %li
+              Species:
+              = character.species
+            %li
+              Occupation:
+              = character.occupation_type
+            %li
+              Class:
+              = character.class_option
+        .btn-group.right-corner
+          = link_to "Open", character, class: "btn btn-primary open-button"
+          = link_to "Delete", character, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger"
+    -# - i = i + 1
