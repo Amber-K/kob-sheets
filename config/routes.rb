@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   resource :session, only: [:new, :create, :destroy]
+  get "signin" => "sessions#new"
 
   resources :users
   get "signup" => "users#new"
