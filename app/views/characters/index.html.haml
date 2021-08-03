@@ -11,7 +11,7 @@
     = link_to character do
       .character-preview
         = image_tag "profile.jpg", class: "profile-img"
-        .preview-text
+        .text-beside-img
           %h5
             = character.name
             - if character.allegiance != ""
@@ -35,5 +35,5 @@
               = character.class_option
         .btn-group.right-corner
           = link_to "Open", character, class: "btn btn-primary open-button"
-          = link_to "Delete", character, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger"
+          = link_to "Delete", character, method: :delete, data: {confirm: "All deletions are permanent. Are you sure?"}, class: "btn btn-danger"
     -# - i = i + 1

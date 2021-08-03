@@ -1,307 +1,275 @@
 -# - javascript_include_tag "characters", "data-turbolinks-track" => true
 
-%h1
-  = @character.name
-  - if @character.allegiance != ""
-    of
-  = @character.allegiance
+.row
+  .col-lg-6
+    = image_tag "profile.jpg", class: "profile-img"
+    .text-beside-img
+      %h1
+        = @character.name
+        - if @character.allegiance != ""
+          of
+        = @character.allegiance
+      %h3
+        Level
+        = @character.level
+        = @character.class_option
+      = @character.current_health
+      -if @character.current_health
+        Health
+      -# .btn-group
+      -#   .btn.btn-outline-secondary#personal-core-button Personal Core
+      -#   .btn.btn-outline-secondary#build-button Build
 
-%h3
-  Level
-  = @character.level
-  = @character.class_option
-
-= @character.current_health
--if @character.current_health != nil
-  Health
-  %br
-
--# .btn-group
--#   .btn.btn-outline-secondary#personal-core-button Personal Core
--#   .btn.btn-outline-secondary#build-button Build
-
-.btn-group
-  = link_to "Back", characters_path, class: "btn btn-secondary"
-  = link_to "Edit", edit_character_path(@character), class: "btn btn-primary"
-  = link_to "Delete", @character, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger"
-%p
-
-#personal-core
-  .sheet-section
-    %h4 Superficial (1/2)
+  .col-lg-2
     %ul
       %li
         Age:
         = @character.age
-
       %li
         Sex:
         = @character.sex
-
       %li
         Height:
         = @character.height
-
       %li
         Weight:
         = @character.weight
-
       %li
         Body Type:
         = @character.body_type
-
       %li
         Skin:
         = @character.skin
 
-  .sheet-section
-    %h4 Superficial (2/2)
+  .col-lg-4
     %ul
       %li
         Race and Ethnicity:
         = @character.race_ethnicity
-
       %li
         Eyes:
         = @character.eyes
-
       %li
         Hair:
         = @character.hair
-
       %li
         Distinguishing Features:
         = @character.distinguishing_features
-
       %li
         Typical Outfit:
         = @character.outfit
-
       %li
         Generally Carries:
         = @character.carries
 
-  .sheet-section
-    %h4 Lifestyle
-    %ul
-      %li
-        Species:
-        = @character.species
+.row
+  .col-lg-12
+    .btn-group.margin-top-bottom
+      = link_to "Back", characters_path, class: "btn btn-secondary"
+      = link_to "Edit", edit_character_path(@character), class: "btn btn-primary"
+      = link_to "Delete", @character, method: :delete, data: {confirm: "All deletions are permanent. Are you sure?"}, class: "btn btn-danger"
 
-      %li
-        Family:
-        = @character.family_type
-        - if @character.family_description != ""
-          \-
-        = @character.family_description
+#personal-core
+  .row
+    .col-md-6
+      %h4 Lifestyle
+      %ul
+        %li
+          Species:
+          = @character.species
+        %li
+          Family:
+          = @character.family_type
+          - if @character.family_description != ""
+            \-
+          = @character.family_description
+        %li
+          Occupation:
+          = @character.occupation_type
+          - if @character.occupation_description != ""
+            \-
+          = @character.occupation_description
+        %li
+          Backstory:
+          = @character.backstory_type
+          - if @character.backstory_description != ""
+            \-
+          = @character.backstory_description
 
-      %li
-        Occupation:
-        = @character.occupation_type
-        - if @character.occupation_description != ""
-          \-
-        = @character.occupation_description
-
-      %li
-        Backstory:
-        = @character.backstory_type
-        - if @character.backstory_description != ""
-          \-
-        = @character.backstory_description
-
-  .sheet-section
-    %h4 Traits
-    %ul
-      %li
-        Likes:
-        = @character.likes
-
-      %li
-        Dislikes:
-        = @character.dislikes
-
-      %li
-        Hobby:
-        = @character.hobby_type
-        - if @character.hobby_description != ""
-          \-
-        = @character.hobby_description
-
-      %li
-        Habit:
-        = @character.habit_type
-        - if @character.habit_description != ""
-          \-
-        = @character.habit_description
-
-      %li
-        Fear:
-        = @character.fear_type
-        - if @character.fear_description != ""
-          \-
-        = @character.fear_description
-
-      %li
-        Quirk:
-        = @character.quirk_type
-        - if @character.quirk_description != ""
-          \-
-        = @character.quirk_description
+    .col-md-6
+      %h4 Traits
+      %ul
+        %li
+          Likes:
+          = @character.likes
+        %li
+          Dislikes:
+          = @character.dislikes
+        %li
+          Hobby:
+          = @character.hobby_type
+          - if @character.hobby_description != ""
+            \-
+          = @character.hobby_description
+        %li
+          Habit:
+          = @character.habit_type
+          - if @character.habit_description != ""
+            \-
+          = @character.habit_description
+        %li
+          Fear:
+          = @character.fear_type
+          - if @character.fear_description != ""
+            \-
+          = @character.fear_description
+        %li
+          Quirk:
+          = @character.quirk_type
+          - if @character.quirk_description != ""
+            \-
+          = @character.quirk_description
 
 #build
-  .sheet-section
-    %h4 Stats
-    %ul
-      %li
-        Athleticism:
-        = @character.base_athleticism
+  .row
+    .col-md-3
+      %h4 Stats
+      %ul
+        %li
+          Athleticism:
+          = @character.base_athleticism
+        %li
+          Coordination:
+          = @character.base_coordination
+        %li
+          Drive:
+          = @character.base_drive
+        %li
+          Knowledge:
+          = @character.base_knowledge
+        %li
+          Openness:
+          = @character.base_openness
+        %li
+          Sociability:
+          = @character.base_sociability
+        %li
+          Stability:
+          = @character.base_stability
 
-      %li
-        Coordination:
-        = @character.base_coordination
+    .col-md-9
+      %h4 Specialties:
+      = @character.base_specialties
 
-      %li
-        Drive:
-        = @character.base_drive
+  %h4 Moves
+  .row
+    .col-md-3
+      %h5 Athleticism
+      %ul
+        %li
+          Destroy:
+          = @character.base_destroy
+        %li
+          Grip:
+          = @character.base_grip
+        %li
+          Leap:
+          = @character.base_leap
+        %li
+          Run:
+          = @character.base_run
+        %li
+          Throw:
+          = @character.base_throw
 
-      %li
-        Knowledge:
-        = @character.base_knowledge
+    .col-md-3
+      %h5 Coordination
+      %ul
+        %li
+          Balance:
+          = @character.base_balance
+        %li
+          Evade:
+          = @character.base_evade
+        %li
+          Maneuver:
+          = @character.base_maneuver
+        %li
+          Sneak:
+          = @character.base_sneak
 
-      %li
-        Openness:
-        = @character.base_openness
+    .col-md-3
+      %h5 Drive
+      %ul
+        %li
+          Create:
+          = @character.base_create
+        %li
+          Endure:
+          = @character.base_endure
+        %li
+          Regulate:
+          = @character.base_regulate
 
-      %li
-        Sociability:
-        = @character.base_sociability
+    .col-md-3
+      %h5 Knowledge
+      %ul
+        %li
+          Debate:
+          = @character.base_debate
+        %li
+          Decipher:
+          = @character.base_decipher
+        %li
+          Diagnose:
+          = @character.base_diagnose
+        %li
+          Infer:
+          = @character.base_infer
+        %li
+          Recall:
+          = @character.base_recall
 
-      %li
-        Stability:
-        = @character.base_stability
+  .row
+    .col-md-3
+      %h5 Openness
+      %ul
+        %li
+          Improvise:
+          = @character.base_improvise
+        %li
+          Notice:
+          = @character.base_notice
 
-  .sheet-section
-    %h4 Moves
-    %h5 Athleticism
-    %ul
-      %li
-        Destroy:
-        = @character.base_destroy
+    .col-md-3
+      %h5 Sociability
+      %ul
+        %li
+          Impress:
+          = @character.base_impress
+        %li
+          Lead:
+          = @character.base_lead
+        %li
+          Lie:
+          = @character.base_lie
+        %li
+          Please:
+          = @character.base_please
 
-      %li
-        Grip:
-        = @character.base_grip
+    .col-md-3
+      %h5 Stability
+      %ul
+        %li
+          Empathize:
+          = @character.base_empathize
+        %li
+          Soothe:
+          = @character.base_soothe
 
-      %li
-        Leap:
-        = @character.base_leap
-
-      %li
-        Run:
-        = @character.base_run
-
-      %li
-        Throw:
-        = @character.base_throw
-
-    %h5 Coordination
-    %ul
-      %li
-        Balance:
-        = @character.base_balance
-
-      %li
-        Evade:
-        = @character.base_evade
-
-      %li
-        Maneuver:
-        = @character.base_maneuver
-
-      %li
-        Sneak:
-        = @character.base_sneak
-
-    %h5 Drive
-    %ul
-      %li
-        Create:
-        = @character.base_create
-
-      %li
-        Endure:
-        = @character.base_endure
-
-      %li
-        Regulate:
-        = @character.base_regulate
-
-    %h5 Knowledge
-    %ul
-      %li
-        Debate:
-        = @character.base_debate
-
-      %li
-        Decipher:
-        = @character.base_decipher
-
-      %li
-        Diagnose:
-        = @character.base_diagnose
-
-      %li
-        Infer:
-        = @character.base_infer
-
-      %li
-        Recall:
-        = @character.base_recall
-
-    %h5 Openness
-    %ul
-      %li
-        Improvise:
-        = @character.base_improvise
-
-      %li
-        Notice:
-        = @character.base_notice
-
-    %h5 Sociability
-    %ul
-      %li
-        Impress:
-        = @character.base_impress
-
-      %li
-        Lead:
-        = @character.base_lead
-
-      %li
-        Lie:
-        = @character.base_lie
-
-      %li
-        Please:
-        = @character.base_please
-
-    %h5 Stability
-    %ul
-      %li
-        Empathize:
-        = @character.base_empathize
-
-      %li
-        Soothe:
-        = @character.base_soothe
-
-  .sheet-section
-    %h4 Specialties:
-    = @character.base_specialties
-
-%p
-.btn-group
-  = link_to "Back", characters_path, class: "btn btn-secondary"
-  = link_to "Edit", edit_character_path(@character), class: "btn btn-primary"
-  = link_to "Delete", @character, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger"
+.row
+  .col-md-12
+    .btn-group
+      = link_to "Back", characters_path, class: "btn btn-secondary"
+      = link_to "Edit", edit_character_path(@character), class: "btn btn-primary"
+      = link_to "Delete", @character, method: :delete, data: {confirm: "All deletions are permanent. Are you sure?"}, class: "btn btn-danger"
