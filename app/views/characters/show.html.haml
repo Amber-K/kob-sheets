@@ -2,7 +2,10 @@
 
 .row
   .col-lg-6
-    = image_tag "profile.jpg", class: "profile-img"
+    - if @character.image_url
+      = image_tag @character.image_url, class: "profile-img"
+    - else
+      = image_tag "profile.jpg", class: "profile-img"
     .text-beside-img
       %h1
         = @character.name
