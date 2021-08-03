@@ -22,363 +22,380 @@
 
   = f.submit class: "btn btn-primary margin-bottom"
 
-  %h4 Appearance
-  .row
-    .col-md-3
-      = f.label :age
-      = f.text_field :age, class: "form-control"
+  #personal-core
+    %h4 Appearance
+    .row
+      .col-md-3
+        = f.label :age
+        = f.text_field :age, class: "form-control"
+      .col-md-3
+        = f.label :sex
+        = f.text_field :sex, class: "form-control"
+      .col-md-3
+        = f.label :height
+        = f.text_field :height, class: "form-control"
+      .col-md-3
+        = f.label :weight
+        = f.text_field :weight, class: "form-control"
+    .row
+      .col-md-3
+        = f.label :body_type, "Body Type"
+        = f.text_field :body_type, class: "form-control"
+      .col-md-3
+        = f.label :skin
+        = f.text_field :skin, class: "form-control"
+      .col-md-3
+        = f.label :race_ethnicity, "Race and Ethnicity"
+        = f.text_field :race_ethnicity, class: "form-control"
+      .col-md-3
+        = f.label :eyes
+        = f.text_field :eyes, class: "form-control"
+    .row
+      .col-md-3
+        = f.label :hair
+        = f.text_field :hair, class: "form-control"
+      .col-md-3
+        = f.label :distinguishing_features, "Distinguishing Features"
+        = f.text_field :distinguishing_features, class: "form-control"
+      .col-md-3
+        = f.label :outfit, "Typical Outfit"
+        = f.text_field :outfit, class: "form-control"
+      .col-md-3
+        = f.label :carries, "Generally Carries"
+        = f.text_field :carries, class: "form-control"
 
-      = f.label :sex
-      = f.text_field :sex, class: "form-control"
+    %h4 Lifestyle
+    = f.label :species
+    = f.select :species, ["Human", "Elf", "Dwarf"], {}, class: "form-select"
+    .row
+      .col-md-4
+        Human:
+        %ul
+          %li +1 Drive
+          %li Talented at Regulating
+          %li Flawed at Impressing
+          %li Unwavering Will
+      .col-md-4
+        Elf:
+        %ul
+          %li +1 Coordination
+          %li Talented at Maneuvering
+          %li Flawed at Destroying
+          %li Elven Grace
+      .col-md-4
+        Dwarf:
+        %ul
+          %li +1 Athleticism
+          %li Talented at Gripping
+          %li Flawed at Deciphering
+          %li Warrior's Instinct
 
-      = f.label :height
-      = f.text_field :height, class: "form-control"
-    .col-md-3
-      = f.label :weight
-      = f.text_field :weight, class: "form-control"
+    = f.label :family_type, "Family"
+    = f.select :family_type, ["Noble", "Middle Class", "Poor"], {}, class: "form-select"
+    .row
+      .col-md-4
+        Noble:
+        %ul
+          %li Talented at Leading
+      .col-md-4
+        Middle Class:
+        %ul
+          %li Talented at Empathizing
+      .col-md-4
+        Poor:
+        %ul
+          %li Talented at Improvising
+    = f.label :family_description, "Family Description"
+    = f.text_area :family_description, class: "form-control"
 
-      = f.label :body_type, "Body Type"
-      = f.text_field :body_type, class: "form-control"
+    = f.label :occupation_type, "Occupation"
+    = f.select :occupation_type, ["Soldier", "Hunter", "Scholar", "Merchant", "Farmer"], {}, class: "form-select"
+    .row
+      .col-md-4
+        Soldier:
+        %ul
+          %li Talented at Enduring
+          %li Battle Formation
+      .col-md-4
+        Hunter:
+        %ul
+          %li Talented at Noticing
+          %li Surprise Takedown
+      .col-md-4
+        Scholar:
+        %ul
+          %li Talented at Recalling
+          %li Expert Analysis
+    .row
+      .col-md-4
+        Merchant:
+        %ul
+          %li Talented at Lying
+          %li Strategic Negotiation
+      .col-md-4
+        Farmer:
+        %ul
+          %li Talented at Creating
+          %li Eye for Botany
+    = f.label :occupation_description, "Occupation Description"
+    = f.text_area :occupation_description, class: "form-control"
 
-      = f.label :skin
-      = f.text_field :skin, class: "form-control"
-    .col-md-3
-      = f.label :race_ethnicity, "Race and Ethnicity"
-      = f.text_field :race_ethnicity, class: "form-control"
+    = f.label :backstory_type, "Backstory"
+    = f.select :backstory_type, ["Successful", "Peaceful", "Adventurous", "Tragic"], {}, class: "form-select"
+    .row
+      .col-md-3
+        Successful:
+        %ul
+          %li +1 Knowledge
+          %li +1 Sociability
+          %li Talented at Debating
+          %li Flawed at Soothing
+      .col-md-3
+        Peaceful:
+        %ul
+          %li +1 Openness
+          %li +1 Stability
+          %li Talented at Soothing
+          %li Flawed at Running
+      .col-md-3
+        Adventurous:
+        %ul
+          %li +1 Athleticism
+          %li +1 Coordination
+          %li Talented at Leaping
+          %li Flawed at Regulating
+      .col-md-3
+        Tragic:
+        %ul
+          %li +1 Coordination
+          %li +1 Drive
+          %li Talented at Sneaking
+          %li Flawed at Pleasing
+    = f.label :backstory_description, "Backstory Description"
+    = f.text_area :backstory_description, class: "form-control"
 
-      = f.label :eyes
-      = f.text_field :eyes, class: "form-control"
+    %h4 Traits
+    .row
+      .col-md-6
+        = f.label :likes
+        = f.text_area :likes, class: "form-control"
+      .col-md-6
+        = f.label :dislikes
+        = f.text_area :dislikes, class: "form-control"
 
-      = f.label :hair
-      = f.text_field :hair, class: "form-control"
-    .col-md-3
-      = f.label :distinguishing_features, "Distinguishing Features"
-      = f.text_field :distinguishing_features, class: "form-control"
+    = f.label :hobby_type, "Hobby"
+    = f.select :hobby_type, ["Art", "Competition", "Performance", "Research", "Socialization"], {}, class: "form-select"
+    .row
+      .col-md-4
+        Art:
+        %ul
+          %li Talented at Creating
+      .col-md-4
+        Competition:
+        %ul
+          %li Talented at Running
+      .col-md-4
+        Performance:
+        %ul
+          %li Talented at Impressing
+    .row
+      .col-md-4
+        Research:
+        %ul
+          %li Talented at Deciphering
+      .col-md-4
+        Socialization:
+        %ul
+          %li Talented at Pleasing
+    = f.label :hobby_description, "Hobby Description"
+    = f.text_area :hobby_description, class: "form-control"
 
-      = f.label :outfit, "Typical Outfit"
-      = f.text_field :outfit, class: "form-control"
+    = f.label :habit_type, "Habit"
+    = f.select :habit_type, ["Envy", "Gluttony", "Greed", "Pride", "Sloth", "Wrath"], {}, class: "form-select"
+    .row
+      .col-md-4
+        Envy:
+        %ul
+          %li -1 Drive
+      .col-md-4
+        Gluttony:
+        %ul
+          %li -1 Athleticism
+      .col-md-4
+        Greed:
+        %ul
+          %li -1 Sociability
+    .row
+      .col-md-4
+        Pride:
+        %ul
+          %li -1 Openness
+      .col-md-4
+        Sloth:
+        %ul
+          %li -1 Coordination
+      .col-md-4
+        Wrath:
+        %ul
+          %li -1 Stability
+    = f.label :habit_description, "Habit Description"
+    = f.text_area :habit_description, class: "form-control"
 
-      = f.label :carries, "Generally Carries"
-      = f.text_field :carries, class: "form-control"
+    = f.label :fear_type, "Fear"
+    = f.select :fear_type, ["Death", "Helplessness", "Isolation", "Pain"], {}, class: "form-select"
+    .row
+      .col-md-3
+        Death:
+        %ul
+          %li Flawed at Balancing
+      .col-md-3
+        Helplessness:
+        %ul
+          %li Flawed at Diagnosing
+      .col-md-3
+        Isolation:
+        %ul
+          %li Flawed at Leading
+      .col-md-3
+        Pain:
+        %ul
+          %li Flawed at Enduring
+    = f.label :fear_description, "Fear Description"
+    = f.text_area :fear_description, class: "form-control"
 
-  %h4 Lifestyle
-  = f.label :species
-  = f.select :species, ["Human", "Elf", "Dwarf"], {}, class: "form-select"
-  .row
-    .col-md-4
-      Human:
-      %ul
-        %li +1 Drive
-        %li Talented at Regulating
-        %li Flawed at Impressing
-        %li Unwavering Will
-    .col-md-4
-      Elf:
-      %ul
-        %li +1 Coordination
-        %li Talented at Maneuvering
-        %li Flawed at Destroying
-        %li Elven Grace
-    .col-md-4
-      Dwarf:
-      %ul
-        %li +1 Athleticism
-        %li Talented at Gripping
-        %li Flawed at Deciphering
-        %li Warrior's Instinct
+    = f.label :quirk_type, "Quirk"
+    = f.select :quirk_type, ["Bold", "Nervous", "Loud", "Quiet", "Excitable", "Detached"], {}, class: "form-select"
 
-  = f.label :family_type, "Family"
-  = f.select :family_type, ["Noble", "Middle Class", "Poor"], {}, class: "form-select"
-  .row
-    .col-md-4
-      Noble:
-      %ul
-        %li Talented at Leading
-    .col-md-4
-      Middle Class:
-      %ul
-        %li Talented at Empathizing
-    .col-md-4
-      Poor:
-      %ul
-        %li Talented at Improvising
-  = f.label :family_description, "Family Description"
-  = f.text_area :family_description, class: "form-control"
+    = f.label :quirk_description, "Quirk Description"
+    = f.text_area :quirk_description, class: "form-control"
 
-  = f.label :occupation_type, "Occupation"
-  = f.select :occupation_type, ["Soldier", "Hunter", "Scholar", "Merchant", "Farmer"], {}, class: "form-select"
-  .row
-    .col-md-4
-      Soldier:
-      %ul
-        %li Talented at Enduring
-        %li Battle Formation
-      Hunter:
-      %ul
-        %li Talented at Noticing
-        %li Surprise Takedown
-    .col-md-4
-      Scholar:
-      %ul
-        %li Talented at Recalling
-        %li Expert Analysis
-      Merchant:
-      %ul
-        %li Talented at Lying
-        %li Strategic Negotiation
-    .col-md-4
-      Farmer:
-      %ul
-        %li Talented at Creating
-        %li Eye for Botany
-  = f.label :occupation_description, "Occupation Description"
-  = f.text_area :occupation_description, class: "form-control"
+  #build
+    %h4 Base Stats
+    .row
+      .col-md-3
+        = f.label :base_athleticism, "Athleticism"
+        = f.number_field :base_athleticism, class: "form-control"
+      .col-md-3
+        = f.label :base_coordination, "Coordination"
+        = f.number_field :base_coordination, class: "form-control"
+      .col-md-3
+        = f.label :base_drive, "Drive"
+        = f.number_field :base_drive, class: "form-control"
+      .col-md-3
+        = f.label :base_knowledge, "Knowledge"
+        = f.number_field :base_knowledge, class: "form-control"
+    .row
+      .col-md-3
+        = f.label :base_openness, "Openness"
+        = f.number_field :base_openness, class: "form-control"
+      .col-md-3
+        = f.label :base_sociability, "Sociability"
+        = f.number_field :base_sociability, class: "form-control"
+      .col-md-3
+        = f.label :base_stability, "Stability"
+        = f.number_field :base_stability, class: "form-control"
 
-  = f.label :backstory_type, "Backstory"
-  = f.select :backstory_type, ["Successful", "Peaceful", "Adventurous", "Tragic"], {}, class: "form-select"
-  .row
-    .col-md-3
-      Successful:
-      %ul
-        %li +1 Knowledge
-        %li +1 Sociability
-        %li Talented at Debating
-        %li Flawed at Soothing
-    .col-md-3
-      Peaceful:
-      %ul
-        %li +1 Openness
-        %li +1 Stability
-        %li Talented at Soothing
-        %li Flawed at Running
-    .col-md-3
-      Adventurous:
-      %ul
-        %li +1 Athleticism
-        %li +1 Coordination
-        %li Talented at Leaping
-        %li Flawed at Regulating
-    .col-md-3
-      Tragic:
-      %ul
-        %li +1 Coordination
-        %li +1 Drive
-        %li Talented at Sneaking
-        %li Flawed at Pleasing
-  = f.label :backstory_description, "Backstory Description"
-  = f.text_area :backstory_description, class: "form-control"
+    %h4
+      = f.label :base_specialties, "Base Specialties"
+    = f.text_area :base_specialties, class: "form-control"
 
-  %h4 Traits
-  .row
-    .col-md-6
-      = f.label :likes
-      = f.text_area :likes, class: "form-control"
-    .col-md-6
-      = f.label :dislikes
-      = f.text_area :dislikes, class: "form-control"
+    %h4 Base Moves
+    %h5 Athleticism
+    .row
+      .col-md-3
+        = f.label :base_destroy, "Destroy"
+        = f.number_field :base_destroy, class: "form-control"
+      .col-md-3
+        = f.label :base_grip, "Grip"
+        = f.number_field :base_grip, class: "form-control"
+      .col-md-3
+        = f.label :base_leap, "Leap"
+        = f.number_field :base_leap, class: "form-control"
+      .col-md-3
+        = f.label :base_run, "Run"
+        = f.number_field :base_run, class: "form-control"
+    .row
+      .col-md-3
+        = f.label :base_throw, "Throw"
+        = f.number_field :base_throw, class: "form-control"
 
-  = f.label :hobby_type, "Hobby"
-  = f.select :hobby_type, ["Art", "Competition", "Performance", "Research", "Socialization"], {}, class: "form-select"
-  .row
-    .col-md-4
-      Art:
-      %ul
-        %li Talented at Creating
-      Competition:
-      %ul
-        %li Talented at Running
-    .col-md-4
-      Performance:
-      %ul
-        %li Talented at Impressing
-      Research:
-      %ul
-        %li Talented at Deciphering
-    .col-md-4
-      Socialization:
-      %ul
-        %li Talented at Pleasing
-  = f.label :hobby_description, "Hobby Description"
-  = f.text_area :hobby_description, class: "form-control"
+    %h5 Coordination
+    .row
+      .col-md-3
+        = f.label :base_balance, "Balance"
+        = f.number_field :base_balance, class: "form-control"
+      .col-md-3
+        = f.label :base_evade, "Evade"
+        = f.number_field :base_evade, class: "form-control"
+      .col-md-3
+        = f.label :base_maneuver, "Maneuver"
+        = f.number_field :base_maneuver, class: "form-control"
+      .col-md-3
+        = f.label :base_sneak, "Sneak"
+        = f.number_field :base_sneak, class: "form-control"
 
-  = f.label :habit_type, "Habit"
-  = f.select :habbit_type, ["Envy", "Gluttony", "Greed", "Pride", "Sloth", "Wrath"], {}, class: "form-select"
-  .row
-    .col-md-4
-      Envy:
-      %ul
-        %li -1 Drive
-      Gluttony:
-      %ul
-        %li -1 Athleticism
-    .col-md-4
-      Greed:
-      %ul
-        %li -1 Sociability
-      Pride:
-      %ul
-        %li -1 Openness
-    .col-md-4
-      Sloth:
-      %ul
-        %li -1 Coordination
-      Wrath:
-      %ul
-        %li -1 Stability
-  = f.label :habit_description, "Habit Description"
-  = f.text_area :habit_description, class: "form-control"
+    %h5 Drive
+    .row
+      .col-md-3
+        = f.label :base_create, "Create"
+        = f.number_field :base_create, class: "form-control"
+      .col-md-3
+        = f.label :base_endure, "Endure"
+        = f.number_field :base_endure, class: "form-control"
+      .col-md-3
+        = f.label :base_regulate, "Regulate"
+        = f.number_field :base_regulate, class: "form-control"
 
-  = f.label :fear_type, "Fear"
-  = f.select :fear_type, ["Death", "Helplessness", "Isolation", "Pain"], {}, class: "form-select"
-  .row
-    .col-md-3
-      Death:
-      %ul
-        %li Flawed at Balancing
-    .col-md-3
-      Helplessness:
-      %ul
-        %li Flawed at Diagnosing
-    .col-md-3
-      Isolation:
-      %ul
-        %li Flawed at Leading
-    .col-md-3
-      Pain:
-      %ul
-        %li Flawed at Enduring
-  = f.label :fear_description, "Fear Description"
-  = f.text_area :fear_description, class: "form-control"
+    %h5 Knowledge
+    .row
+      .col-md-3
+        = f.label :base_debate, "Debate"
+        = f.number_field :base_debate, class: "form-control"
+      .col-md-3
+        = f.label :base_decipher, "Decipher"
+        = f.number_field :base_decipher, class: "form-control"
+      .col-md-3
+        = f.label :base_diagnose, "Diagnose"
+        = f.number_field :base_diagnose, class: "form-control"
+      .col-md-3
+        = f.label :base_infer, "Infer"
+        = f.number_field :base_infer, class: "form-control"
+    .row
+      .col-md-3
+        = f.label :base_recall, "Recall"
+        = f.number_field :base_recall, class: "form-control"
 
-  = f.label :quirk_type, "Quirk"
-  = f.select :quirk_type, ["Bold", "Nervous", "Loud", "Quiet", "Excitable", "Detached"], {}, class: "form-select"
+    %h5 Openness
+    .row
+      .col-md-3
+        = f.label :base_improvise, "Improvise"
+        = f.number_field :base_improvise, class: "form-control"
+      .col-md-3
+        = f.label :base_notice, "Notice"
+        = f.number_field :base_notice, class: "form-control"
 
-  = f.label :quirk_description, "Quirk Description"
-  = f.text_area :quirk_description, class: "form-control"
+    %h5 Sociability
+    .row
+      .col-md-3
+        = f.label :base_impress, "Impress"
+        = f.number_field :base_impress, class: "form-control"
+      .col-md-3
+        = f.label :base_lead, "Lead"
+        = f.number_field :base_lead, class: "form-control"
+      .col-md-3
+        = f.label :base_lie, "Lie"
+        = f.number_field :base_lie, class: "form-control"
+      .col-md-3
+        = f.label :base_please, "Please"
+        = f.number_field :base_please, class: "form-control"
 
-  %h4 Base Stats
-  .row
-    .col-md-3
-      = f.label :base_athleticism, "Athleticism"
-      = f.number_field :base_athleticism, class: "form-control"
-
-      = f.label :base_coordination, "Coordination"
-      = f.number_field :base_coordination, class: "form-control"
-    .col-md-3
-      = f.label :base_drive, "Drive"
-      = f.number_field :base_drive, class: "form-control"
-
-      = f.label :base_knowledge, "Knowledge"
-      = f.number_field :base_knowledge, class: "form-control"
-    .col-md-3
-      = f.label :base_openness, "Openness"
-      = f.number_field :base_openness, class: "form-control"
-
-      = f.label :base_sociability, "Sociability"
-      = f.number_field :base_sociability, class: "form-control"
-    .col-md-3
-      = f.label :base_stability, "Stability"
-      = f.number_field :base_stability, class: "form-control"
-
-  %h4
-    = f.label :base_specialties, "Base Specialties"
-  = f.text_area :base_specialties, class: "form-control"
-
-  %h4 Base Moves
-  %h5 Athleticism
-  .row
-    .col-md-3
-      = f.label :base_destroy, "Destroy"
-      = f.number_field :base_destroy, class: "form-control"
-
-      = f.label :base_grip, "Grip"
-      = f.number_field :base_grip, class: "form-control"
-    .col-md-3
-      = f.label :base_leap, "Leap"
-      = f.number_field :base_leap, class: "form-control"
-    .col-md-3
-      = f.label :base_run, "Run"
-      = f.number_field :base_run, class: "form-control"
-    .col-md-3
-      = f.label :base_throw, "Throw"
-      = f.number_field :base_throw, class: "form-control"
-
-  %h5 Coordination
-  .row
-    .col-md-3
-      = f.label :base_balance, "Balance"
-      = f.number_field :base_balance, class: "form-control"
-    .col-md-3
-      = f.label :base_evade, "Evade"
-      = f.number_field :base_evade, class: "form-control"
-    .col-md-3
-      = f.label :base_maneuver, "Maneuver"
-      = f.number_field :base_maneuver, class: "form-control"
-    .col-md-3
-      = f.label :base_sneak, "Sneak"
-      = f.number_field :base_sneak, class: "form-control"
-
-  %h5 Drive
-  .row
-    .col-md-3
-      = f.label :base_create, "Create"
-      = f.number_field :base_create, class: "form-control"
-    .col-md-3
-      = f.label :base_endure, "Endure"
-      = f.number_field :base_endure, class: "form-control"
-    .col-md-3
-      = f.label :base_regulate, "Regulate"
-      = f.number_field :base_regulate, class: "form-control"
-
-  %h5 Knowledge
-  .row
-    .col-md-3
-      = f.label :base_debate, "Debate"
-      = f.number_field :base_debate, class: "form-control"
-
-      = f.label :base_decipher, "Decipher"
-      = f.number_field :base_decipher, class: "form-control"
-    .col-md-3
-      = f.label :base_diagnose, "Diagnose"
-      = f.number_field :base_diagnose, class: "form-control"
-    .col-md-3
-      = f.label :base_infer, "Infer"
-      = f.number_field :base_infer, class: "form-control"
-    .col-md-3
-      = f.label :base_recall, "Recall"
-      = f.number_field :base_recall, class: "form-control"
-
-  %h5 Openness
-  .row
-    .col-md-3
-      = f.label :base_improvise, "Improvise"
-      = f.number_field :base_improvise, class: "form-control"
-    .col-md-3
-      = f.label :base_notice, "Notice"
-      = f.number_field :base_notice, class: "form-control"
-
-  %h5 Sociability
-  .row
-    .col-md-3
-      = f.label :base_impress, "Impress"
-      = f.number_field :base_impress, class: "form-control"
-    .col-md-3
-      = f.label :base_lead, "Lead"
-      = f.number_field :base_lead, class: "form-control"
-    .col-md-3
-      = f.label :base_lie, "Lie"
-      = f.number_field :base_lie, class: "form-control"
-    .col-md-3
-      = f.label :base_please, "Please"
-      = f.number_field :base_please, class: "form-control"
-
-  %h5 Stability
-  .row
-    .col-md-3
-      = f.label :base_empathize, "Empathize"
-      = f.number_field :base_empathize, class: "form-control"
-    .col-md-3
-      = f.label :base_soothe, "Soothe"
-      = f.number_field :base_soothe, class: "form-control"
+    %h5 Stability
+    .row
+      .col-md-3
+        = f.label :base_empathize, "Empathize"
+        = f.number_field :base_empathize, class: "form-control"
+      .col-md-3
+        = f.label :base_soothe, "Soothe"
+        = f.number_field :base_soothe, class: "form-control"
 
   = f.submit class: "btn btn-primary margin-top-bottom"

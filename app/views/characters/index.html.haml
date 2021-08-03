@@ -2,21 +2,19 @@
 
 = link_to "Create New Character", new_character_path, class: "btn btn-primary"
 
--# - i = 0
 - @characters.each do |character|
   - if current_user.id == character.user_id
-    -# - if i % 2 == 0
-      .w-100
-    -# .col-6
     = link_to character do
       .character-preview
-        - if character.image_url
+        - if character.image_url && character.image_url != ""
           = image_tag character.image_url, class: "profile-img"
         - else
           = image_tag "profile.jpg", class: "profile-img"
         .text-beside-img
           %h5
             = character.name
+            - if character.name == ""
+              Nameless Character
             - if character.allegiance != ""
               of
             = character.allegiance
@@ -39,4 +37,3 @@
         .btn-group.right-corner
           = link_to "Open", character, class: "btn btn-primary open-button"
           = link_to "Delete", character, method: :delete, data: {confirm: "All deletions are permanent. Are you sure?"}, class: "btn btn-danger"
-    -# - i = i + 1
