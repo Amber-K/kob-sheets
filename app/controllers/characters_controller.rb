@@ -128,11 +128,11 @@ class CharactersController < ApplicationController
     smart_stats = apply_stat_changes_from(stat_influencers[character.habit_type], smart_stats)
     smart_stats = apply_stat_changes_from(stat_influencers[character.fear_type], smart_stats)
 
-    class_health = 0
+    class_health = 5
     if character.class_option == "Knight"
-      class_health = 4
+      class_health += 4
     elsif character.class_option == "Archer"
-      class_health = 2
+      class_health += 2
     end
     smart_stats[:total_health] = (character.level * smart_stats[:athleticism]) + (character.level * class_health)
     smart_stats[:destroy] += + smart_stats[:athleticism]
