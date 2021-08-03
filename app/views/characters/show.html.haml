@@ -1,14 +1,14 @@
--# - javascript_include_tag "characters", "data-turbolinks-track" => true
-
 .row
   .col-lg-6
-    - if @character.image_url
+    - if @character.image_url && @character.image_url != ""
       = image_tag @character.image_url, class: "profile-img"
     - else
       = image_tag "profile.jpg", class: "profile-img"
     .text-beside-img
       %h1
         = @character.name
+        - if @character.name == ""
+          Nameless Character
         - if @character.allegiance != ""
           of
         = @character.allegiance
@@ -16,53 +16,54 @@
         Level
         = @character.level
         = @character.class_option
-      = @character.current_health
-      -if @character.current_health
+      %strong
+        = @character.current_health
+        - unless @character.current_health
+          = @smart_stats[:total_health]
+        \/
+        = @smart_stats[:total_health]
         Health
-      -# .btn-group
-      -#   .btn.btn-outline-secondary#personal-core-button Personal Core
-      -#   .btn.btn-outline-secondary#build-button Build
 
   .col-lg-2
     %ul
       %li
-        Age:
+        %strong Age:
         = @character.age
       %li
-        Sex:
+        %strong Sex:
         = @character.sex
       %li
-        Height:
+        %strong Height:
         = @character.height
       %li
-        Weight:
+        %strong Weight:
         = @character.weight
       %li
-        Body Type:
+        %strong Body Type:
         = @character.body_type
       %li
-        Skin:
+        %strong Skin:
         = @character.skin
 
   .col-lg-4
     %ul
       %li
-        Race and Ethnicity:
+        %strong Race and Ethnicity:
         = @character.race_ethnicity
       %li
-        Eyes:
+        %strong Eyes:
         = @character.eyes
       %li
-        Hair:
+        %strong Hair:
         = @character.hair
       %li
-        Distinguishing Features:
+        %strong Distinguishing Features:
         = @character.distinguishing_features
       %li
-        Typical Outfit:
+        %strong Typical Outfit:
         = @character.outfit
       %li
-        Generally Carries:
+        %strong Generally Carries:
         = @character.carries
 
 .row
@@ -78,22 +79,22 @@
       %h4 Lifestyle
       %ul
         %li
-          Species:
+          %strong Species:
           = @character.species
         %li
-          Family:
+          %strong Family:
           = @character.family_type
           - if @character.family_description != ""
             \-
           = @character.family_description
         %li
-          Occupation:
+          %strong Occupation:
           = @character.occupation_type
           - if @character.occupation_description != ""
             \-
           = @character.occupation_description
         %li
-          Backstory:
+          %strong Backstory:
           = @character.backstory_type
           - if @character.backstory_description != ""
             \-
@@ -103,31 +104,31 @@
       %h4 Traits
       %ul
         %li
-          Likes:
+          %strong Likes:
           = @character.likes
         %li
-          Dislikes:
+          %strong Dislikes:
           = @character.dislikes
         %li
-          Hobby:
+          %strong Hobby:
           = @character.hobby_type
           - if @character.hobby_description != ""
             \-
           = @character.hobby_description
         %li
-          Habit:
+          %strong Habit:
           = @character.habit_type
           - if @character.habit_description != ""
             \-
           = @character.habit_description
         %li
-          Fear:
+          %strong Fear:
           = @character.fear_type
           - if @character.fear_description != ""
             \-
           = @character.fear_description
         %li
-          Quirk:
+          %strong Quirk:
           = @character.quirk_type
           - if @character.quirk_description != ""
             \-
@@ -139,30 +140,30 @@
       %h4 Stats
       %ul
         %li
-          Athleticism:
-          = @character.base_athleticism
+          %strong Athleticism:
+          = @smart_stats[:athleticism]
         %li
-          Coordination:
-          = @character.base_coordination
+          %strong Coordination:
+          = @smart_stats[:coordination]
         %li
-          Drive:
-          = @character.base_drive
+          %strong Drive:
+          = @smart_stats[:drive]
         %li
-          Knowledge:
-          = @character.base_knowledge
+          %strong Knowledge:
+          = @smart_stats[:knowledge]
         %li
-          Openness:
-          = @character.base_openness
+          %strong Openness:
+          = @smart_stats[:openness]
         %li
-          Sociability:
-          = @character.base_sociability
+          %strong Sociability:
+          = @smart_stats[:sociability]
         %li
-          Stability:
-          = @character.base_stability
+          %strong Stability:
+          = @smart_stats[:stability]
 
     .col-md-9
-      %h4 Specialties:
-      = @character.base_specialties
+      %h4 Specialties
+      = @smart_stats[:specialties]
 
   %h4 Moves
   .row
@@ -170,105 +171,105 @@
       %h5 Athleticism
       %ul
         %li
-          Destroy:
-          = @character.base_destroy
+          %strong Destroy:
+          = @smart_stats[:destroy]
         %li
-          Grip:
-          = @character.base_grip
+          %strong Grip:
+          = @smart_stats[:grip]
         %li
-          Leap:
-          = @character.base_leap
+          %strong Leap:
+          = @smart_stats[:leap]
         %li
-          Run:
-          = @character.base_run
+          %strong Run:
+          = @smart_stats[:run]
         %li
-          Throw:
-          = @character.base_throw
+          %strong Throw:
+          = @smart_stats[:throw]
 
     .col-md-3
       %h5 Coordination
       %ul
         %li
-          Balance:
-          = @character.base_balance
+          %strong Balance:
+          = @smart_stats[:balance]
         %li
-          Evade:
-          = @character.base_evade
+          %strong Evade:
+          = @smart_stats[:evade]
         %li
-          Maneuver:
-          = @character.base_maneuver
+          %strong Maneuver:
+          = @smart_stats[:maneuver]
         %li
-          Sneak:
-          = @character.base_sneak
+          %strong Sneak:
+          = @smart_stats[:sneak]
 
     .col-md-3
       %h5 Drive
       %ul
         %li
-          Create:
-          = @character.base_create
+          %strong Create:
+          = @smart_stats[:create]
         %li
-          Endure:
-          = @character.base_endure
+          %strong Endure:
+          = @smart_stats[:endure]
         %li
-          Regulate:
-          = @character.base_regulate
+          %strong Regulate:
+          = @smart_stats[:regulate]
 
     .col-md-3
       %h5 Knowledge
       %ul
         %li
-          Debate:
-          = @character.base_debate
+          %strong Debate:
+          = @smart_stats[:debate]
         %li
-          Decipher:
-          = @character.base_decipher
+          %strong Decipher:
+          = @smart_stats[:decipher]
         %li
-          Diagnose:
-          = @character.base_diagnose
+          %strong Diagnose:
+          = @smart_stats[:diagnose]
         %li
-          Infer:
-          = @character.base_infer
+          %strong Infer:
+          = @smart_stats[:infer]
         %li
-          Recall:
-          = @character.base_recall
+          %strong Recall:
+          = @smart_stats[:recall]
 
   .row
     .col-md-3
       %h5 Openness
       %ul
         %li
-          Improvise:
-          = @character.base_improvise
+          %strong Improvise:
+          = @smart_stats[:improvise]
         %li
-          Notice:
-          = @character.base_notice
+          %strong Notice:
+          = @smart_stats[:notice]
 
     .col-md-3
       %h5 Sociability
       %ul
         %li
-          Impress:
-          = @character.base_impress
+          %strong Impress:
+          = @smart_stats[:impress]
         %li
-          Lead:
-          = @character.base_lead
+          %strong Lead:
+          = @smart_stats[:lead]
         %li
-          Lie:
-          = @character.base_lie
+          %strong Lie:
+          = @smart_stats[:lie]
         %li
-          Please:
-          = @character.base_please
+          %strong Please:
+          = @smart_stats[:please]
 
     .col-md-3
       %h5 Stability
       %ul
         %li
-          Empathize:
-          = @character.base_empathize
+          %strong Empathize:
+          = @smart_stats[:empathize]
         %li
-          Soothe:
-          = @character.base_soothe
+          %strong Soothe:
+          = @smart_stats[:soothe]
 
 .row
   .col-md-12
