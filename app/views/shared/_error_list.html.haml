@@ -1,0 +1,7 @@
+- if errors.any?
+  .alert.alert-warning
+    %h4 Please correct the following:
+    %ul
+      - errors.full_messages.each do |message|
+        %li
+          = message

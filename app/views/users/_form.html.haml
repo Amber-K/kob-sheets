@@ -1,5 +1,7 @@
 = form_with(model: user, local: true) do |f|
 
+  = render "shared/error_list", errors: user.errors
+
   = f.label :username
   = f.text_field :username, autofocus: true, class: "form-control"
 

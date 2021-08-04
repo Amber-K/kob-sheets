@@ -1,5 +1,7 @@
 = form_with(model: character, local: true) do |f|
 
+  = render "shared/error_list", errors: character.errors
+
   .row
     .col-md-3
       = f.label :name

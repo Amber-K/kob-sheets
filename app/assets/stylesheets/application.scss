@@ -61,3 +61,9 @@ h1, h2, h3, h4, h5, strong {
 .form-control {
   margin-bottom: 15px;
 }
+
+div.field_with_errors {
+  input, textarea, select {
+    @extend .is-invalid;
+  }
+}
