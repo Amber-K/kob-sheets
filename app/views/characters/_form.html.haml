@@ -20,7 +20,9 @@
       = f.label :image_url, "Image URL"
       = f.text_field :image_url, class: "form-control"
 
-  = f.submit class: "btn btn-primary margin-bottom"
+  .btn-group.margin-bottom
+    = link_to "Back", character, class: "btn btn-secondary"
+    = f.submit class: "btn btn-primary"
 
   #personal-core
     %h4 Appearance
@@ -402,4 +404,6 @@
     = f.label :inventory
   = f.text_area :inventory, class: "form-control"
 
-  = f.submit class: "btn btn-primary margin-top-bottom"
+  .btn-group.margin-top-bottom
+    = link_to "Back", character, class: "btn btn-secondary"
+    = f.submit class: "btn btn-primary"
