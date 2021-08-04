@@ -6,6 +6,14 @@ body.static_pages main.page-content {
   padding: 0;
 }
 
+body.static_pages main.page-content .alert {
+  position: absolute;
+  top: 6rem;
+  margin-left: 15px;
+  z-index: 1;
+  width: 97%;
+}
+
 .title-bar {
   position: relative;
   bottom: 3rem;
